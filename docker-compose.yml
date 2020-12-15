@@ -1,0 +1,17 @@
+version: '2'
+services:
+  client:
+    build:
+      context: ./
+    # command: npx create-react-app react-app 
+    # entrypoint: /usr/app/react-app
+    # command: yarn cache clean
+    command: npm start
+    stdin_open: true
+    volumes:
+      - ./react-app:/react-app
+      # - /react-app/node_modules
+    # depends_on:
+    #   - server
+    ports:
+      - "4003:3000"
